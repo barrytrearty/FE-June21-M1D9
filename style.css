@@ -1,0 +1,65 @@
+body {
+  background-color: #00db71;
+  color: black;
+  /* max-width: 1280px; */
+  margin: auto;
+  font-family: Fantasy;
+  /* text-shadow: 2px 1px white; */
+}
+
+h1 {
+  font-weight: lighter;
+  font-size: 60px;
+  text-align: center;
+  text-transform: uppercase;
+  text-shadow: 2px 3px rgba(255, 255, 255, 0.123);
+}
+
+#game {
+  width: 500px;
+  margin: auto;
+}
+
+#main-board {
+  border-style: solid;
+  display: flex;
+  justify-content: space-evenly;
+  align-items: center;
+  flex-wrap: wrap;
+}
+
+.number-square {
+  border-style: solid;
+  border-width: 1px;
+  display: inline-block;
+  width: 50px;
+  padding: 20px;
+  margin: 4px;
+  box-shadow: 2px 3px black;
+}
+
+.selected {
+  background-color: black;
+  color: #00db71;
+  box-shadow: -2px -3px #00db71;
+}
+
+button {
+  /* margin-top: 20px; */
+  display: flex;
+  margin: auto;
+  margin-top: 10px;
+  margin-bottom: 20px;
+  border-style: solid;
+  border-color: black;
+  box-shadow: 2px 3px black;
+  background-color: #8efbcf;
+  padding: 10px;
+  /* font-size: 1rem; */
+  font-size: 17px;
+  font-weight: bold;
+}
+
+button:active {
+  box-shadow: -2px -3px black;
+}
