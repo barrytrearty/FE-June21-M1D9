@@ -38,13 +38,50 @@ h1 {
   box-shadow: 2px 3px black;
 }
 
+#user-section {
+  width: 500px;
+  margin: auto;
+}
+
+.new-player {
+  background-color: #8efbcf;
+  border-style: solid;
+  display: flex;
+  justify-content: space-evenly;
+  align-items: center;
+  flex-wrap: wrap;
+  margin-bottom: 50px;
+}
+
+.new-player-square {
+  background-color: #cfc1cf;
+  border-style: solid;
+  border-width: 5px;
+  display: inline-block;
+  width: 25px;
+  padding: 9px;
+  margin: 9px;
+  /* box-shadow: 2px 3px black; */
+}
+
 .selected {
   background-color: black;
   color: #00db71;
   box-shadow: -2px -3px #00db71;
 }
 
-button {
+.hidden {
+  visibility: hidden;
+}
+
+#play-button {
+  /* width: 400px;
+  text-align: center; */
+  padding-left: 150px;
+  padding-right: 150px;
+}
+
+.button {
   /* margin-top: 20px; */
   display: flex;
   margin: auto;
@@ -60,6 +97,6 @@ button {
   font-weight: bold;
 }
 
-button:active {
+.button:active {
   box-shadow: -2px -3px black;
 }

@@ -19,14 +19,37 @@
         - Let the user choose HOW MANY user boards he's willing to play with and create them.
     -->
     <div><h1>Welcome to Bingo</h1></div>
+    <button id="play-button" class="button" onclick="generateGameBoard()">
+      Start Game
+    </button>
     <div id="game">
-      <div id="main-board" class="board">
+      <div id="main-board" class="board hidden">
         <!-- <div class="number-square">square</div> -->
       </div>
-      <button onclick="pushButton()">New Number</button>
+      <button
+        id="new-number-button"
+        class="button hidden"
+        onclick="generateNewNumber(76, alreadySelected)"
+      >
+        New Number
+      </button>
     </div>
     <div id="user-section">
-      <div class="user-board"></div>
+      <div class="user-board">
+        <button
+          id="board-button"
+          class="button hidden"
+          onclick="generatePlayerBoard()"
+        >
+          Add card
+        </button>
+        <!-- <select class="button hidden" name="players" id="players">
+          <option value="1">1</option>
+          <option value="2">2</option>
+          <option value="3">3</option>
+          <option value="4">4</option>
+        </select> -->
+      </div>
     </div>
     <script src="bingo.js"></script>
   </body>
