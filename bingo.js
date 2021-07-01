@@ -67,3 +67,16 @@ const generatePlayerBoard = function () {
     newPlayer.appendChild(newSquare1);
   }
 };
+
+//Game Over
+let gameOverCounter = 0;
+newNumber.addEventListener("click", function () {
+  gameOverCounter++;
+  console.log(gameOverCounter);
+  if (gameOverCounter === 76) {
+    gameBoard.remove();
+    userSection.remove();
+    newNumber.remove();
+    title.innerText = "Game Over";
+  }
+});
