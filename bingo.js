@@ -10,6 +10,7 @@ const userSection = document.getElementById("user-section");
 const title = document.getElementsByTagName("h1")[0];
 const numberOfPlayers = document.getElementById("number-of-players");
 let alreadySelected = [];
+let gameOverCounter = 0;
 
 // Create new game
 const generateGameBoard = function () {
@@ -38,13 +39,19 @@ const generateUniqueNumber = function (array) {
 
 // Generate and mark off card
 const generateNewBingoNumber = function () {
-  let bingoNumber = generateUniqueNumber(alreadySelected);
-  for (let square of gameBoardSquares) {
-    if (bingoNumber == Number(square.innerText)) {
-      square.classList.add("selected");
-      console.log(bingoNumber);
-      console.log(alreadySelected);
+  if (gameOverCounter < 76) {
+    let bingoNumber = generateUniqueNumber(alreadySelected);
+    for (let square of gameBoardSquares) {
+      if (bingoNumber == Number(square.innerText)) {
+        square.classList.add("selected");
+        console.log(bingoNumber);
+        console.log(alreadySelected);
+      }
     }
+    gameOverCounter++;
+    console.log(gameOverCounter);
+  } else {
+    gameOver();
   }
 };
 
@@ -68,15 +75,10 @@ const generatePlayerBoard = function () {
   }
 };
 
-//Game Over
-let gameOverCounter = 0;
-newNumber.addEventListener("click", function () {
-  gameOverCounter++;
-  console.log(gameOverCounter);
-  if (gameOverCounter === 76) {
-    gameBoard.remove();
-    userSection.remove();
-    newNumber.remove();
-    title.innerText = "Game Over";
-  }
-});
+//Game over function
+const gameOver = function () {
+  gameBoard.remove();
+  userSection.remove();
+  newNumber.remove();
+  title.innerText = "Game Over";
+};
