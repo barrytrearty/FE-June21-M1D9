@@ -48,6 +48,12 @@ const generateNewBingoNumber = function () {
         console.log(alreadySelected);
       }
     }
+    let playerBoardNumbers = document.getElementsByClassName(
+      `player-number-${bingoNumber}`
+    );
+    for (let playerNumber of playerBoardNumbers) {
+      playerNumber.classList.add("marked-off");
+    }
     gameOverCounter++;
     console.log(gameOverCounter);
   } else {
@@ -70,10 +76,17 @@ const generatePlayerBoard = function () {
   for (let number = 0; number <= 23; number++) {
     let newSquare1 = document.createElement("div");
     newSquare1.innerText = playerNumberArray[number];
-    newSquare1.classList.add("new-player-square");
+    newSquare1.classList.add(
+      "new-player-square",
+      `player-number-${playerNumberArray[number]}`
+    );
     newPlayer.appendChild(newSquare1);
   }
 };
+//TO DO: Mark off numbersas they come out
+//When generatePlayerBoard is ran, it gives each newSquare div, a class specific to its number ie.. classList.add(`player-number${playerNumberArray[number]}`)
+//When generateNewBingoNumber is ran, it will loop through the player boards and search for numbers with the class ie. document.getElementsByClassname("player-number-")
+//It will go through these divs and add another class of marked-off  to them
 
 //Game over function
 const gameOver = function () {
